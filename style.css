@@ -1,19 +1,29 @@
 #left {
   display: inline-block;
+  position: absolute;
   height: 200px;
-  width: 300px;
-  background-color: green;
+  width: 150px;
   background: url(test1.jpeg);
-  clip-path: polygon(0 0, 50% 0, 15% 100%, 0 100%);
-  transition: clip-path 2s;
+  clip-path: polygon(0 0, 150px 0, 45px 200px, 0 200px);
+  transition: clip-path 2s, width 2s;
+  z-index: 2;
 }
 #left:hover {
-  clip-path: polygon(0 0, 80% 0, 40% 100%, 0 100%);
+  width: 300px;
+  clip-path: polygon(0 0, 240px 0, 120px 200px, 0 200px);
 }
 
 #right {
   display: inline-block;
+  position: absolute;
   height: 200px;
+  width: 300px;
+  background: url(test2.jpeg);
+  clip-path: polygon(150px 0, 300px 0, 300px 200px, 45px 200px);
+  transition: clip-path 2s, width 2s;
+}
+#right:hover {
+  clip-path: polygon(150px 0, 300px 0, 300px 200px, 45px 200px);
   width: 300px;
 }
 
