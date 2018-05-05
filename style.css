@@ -2,6 +2,12 @@
   display: inline-block;
   height: 200px;
   width: 300px;
+  background-color: green;
+  background: url(test1.jpeg);
+  clip-path: polygon(0 0, 0 200px, 100px 80px, 100px 0);
+}
+#left:hover {
+  clip-path: polygon(0 0, 0 200px, 145px 80px, 100px 0);
 }
 
 #right {
