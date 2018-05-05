@@ -1,0 +1,19 @@
+#left {
+  display: inline-block;
+  height: 200px;
+  width: 200px;
+  background-color: red;
+}
+#left:hover {
+  width: 100px;
+  border-right: 50px;
+}
+
+#right {
+  display: inline-block;
+  height: 200px;
+  width: 200px;
+  background-color: blue;
+}
+
+/*# sourceMappingURL=style.css.map */
