@@ -4,10 +4,11 @@
   width:            300px;
   background-color: green;
   background:       url(test1.jpeg);
-  clip-path:        polygon(0 0, 0 200px, 100px 80px, 100px 0);
+  clip-path:        polygon(0 0, 50% 0, 15% 100%, 0 100%);
+  transition:       clip-path 2s;
 
   &:hover {
-    clip-path:        polygon(0 0, 0 200px, 145px 80px, 100px 0);
+    clip-path: polygon(0 0, 80% 0, 40% 100%, 0 100%);
   }
 }
 
