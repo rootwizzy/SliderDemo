@@ -1,19 +1,13 @@
 #left {
   display: inline-block;
   height: 200px;
-  width: 200px;
-  background-color: red;
-}
-#left:hover {
-  width: 100px;
-  border-right: 50px;
+  width: 300px;
 }
 
 #right {
   display: inline-block;
   height: 200px;
-  width: 200px;
-  background-color: blue;
+  width: 300px;
 }
 
 /*# sourceMappingURL=style.css.map */
