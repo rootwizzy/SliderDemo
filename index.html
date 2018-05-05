@@ -1,9 +1,47 @@
 <head>
-    <link rel="stylesheet" type="text/css" href="style.css"
+    <link rel="stylesheet" type="text/css" href="style.css">
 </head>
 <body>
     <div id="wrapper">
-        <img id="left"></img>
-        <img id="right"></img>
+        <img id="left" />
+        <img id="right" />
+        <div id="blurb-left" class="blurb">THIS</div>
+        <div id="blurb-right" class="blurb">THAT</div>
     </div>
+
+    <script type="text/javascript">
+
+        var left  = document.getElementById("left"),
+            right = document.getElementById("right");
+
+        var transitionOut = (event) => {
+            if (!event.target.classList.contains("active")) {
+                event.target.style.zIndex = null;
+            }
+        }
+
+        left.addEventListener("mouseenter", function (event) {
+            left.classList.add('active');
+            left.style.zIndex = "2";
+            right.style.zIndex = null;
+        });
+
+        left.addEventListener("mouseleave", function (event) {
+            left.addEventListener("transitionend", transitionOut, false);
+            left.classList.remove('active');
+        });
+
+        right.addEventListener("mouseenter", function (event) {
+            right.classList.add('active');
+            right.style.zIndex = "2";
+            left.style.zIndex = null;
+        });
+
+        right.addEventListener("mouseleave", function (event) {
+            right.addEventListener("transitionend", transitionOut, false);
+            right.classList.remove('active');
+        });
+
+
+    </script>
 </body>
