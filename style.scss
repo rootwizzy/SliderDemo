@@ -11,11 +11,14 @@
   width:      400px;
   background: url(test1.jpeg);
   clip-path:  polygon(0 0, 300px 0, 100px 200px, 0 200px);
-  transition: clip-path .2s, width .2s;
+  transition: clip-path .2s;
 
   &.hover {
-    width:     400px;
     clip-path: polygon(0 0, 365px 0, 165px 200px, 0 200px);
+  }
+
+  &.active {
+    clip-path: polygon(0 0, 400px 0, 400px 200px, 0 200px);
   }
 }
 
@@ -28,11 +31,15 @@
 
   background: url(test2.jpeg);
   clip-path:  polygon(300px 0, 400px 0, 400px 200px, 100px 200px);
-  transition: clip-path .2s, width .2s;
+  transition: clip-path .2s;
 
   &.hover {
-    width:     400px;
     clip-path: polygon(255px 0, 400px 0, 400px 200px, 45px 200px);
+  }
+
+  &.active {
+    clip-path: polygon(0 0, 400px 0, 400px 200px, 0 200px);
+
   }
 }
 
@@ -77,3 +84,14 @@
   }
 }
 
+#left-close {
+
+}
+
+#right-close {
+
+}
+
+.close {
+
+}
