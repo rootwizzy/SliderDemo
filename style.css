@@ -38,9 +38,13 @@
   font-size: 14px;
   text-shadow: 1px 1px 2px black;
   color: white;
+  opacity: 0;
 }
 .blurb .blurb-description {
   font-size: 12px;
+}
+.blurb.active {
+  opacity: 1;
 }
 
 #blurb-left {

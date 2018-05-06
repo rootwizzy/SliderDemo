@@ -42,10 +42,14 @@
   font-size:   14px;
   text-shadow: 1px 1px 2px black;
   color:       white;
-  // visibility: hidden;
+  opacity: 0;
 
   .blurb-description {
     font-size: 12px;
+  }
+
+  &.active {
+    opacity: 1;
   }
 }
 
