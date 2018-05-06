@@ -42,7 +42,7 @@
   font-size:   14px;
   text-shadow: 1px 1px 2px black;
   color:       white;
-  opacity: 0;
+  opacity:     0;
 
   .blurb-description {
     font-size: 12px;
@@ -56,14 +56,24 @@
 #blurb-left {
   z-index:     4;
   margin-top:  60px;
-  margin-left: 30px;
+  margin-left: 15px;
   float:       left;
+  transition:  margin-left .4s, opacity .4s;
+
+  &.active {
+    margin-left: 30px;
+  }
 }
 
 #blurb-right {
   z-index:      4;
   float:        right;
   margin-top:   60px;
-  margin-right: 30px;
+  margin-right: 15px;
+  transition:   margin-right .4s, opacity .4s;
+
+  &.active {
+    margin-right: 30px;
+  }
 }
 
