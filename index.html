@@ -27,22 +27,22 @@
             rightBlurb = document.getElementById("blurb-right");
 
         const transitionOut = (event) => {
-            if (!event.target.classList.contains("active")) {
+            if (!event.target.classList.contains("hover")) {
                 event.target.style.zIndex = null;
             }
         }
 
         const leftEnter = (event) => {
-            left.classList.add('active');
-            leftBlurb.classList.add('active');
+            left.classList.add('hover');
+            leftBlurb.classList.add('hover');
 
             left.style.zIndex = "2";
             right.style.zIndex = null;
         }
 
         const rightEnter = (event) => {
-            right.classList.add('active');
-            rightBlurb.classList.add('active');
+            right.classList.add('hover');
+            rightBlurb.classList.add('hover');
 
             right.style.zIndex = "2";
             left.style.zIndex = null;
@@ -50,14 +50,14 @@
 
         const rightLeave = (event) => {
             right.addEventListener("transitionend", transitionOut, false);
-            right.classList.remove('active');
-            rightBlurb.classList.remove('active');
+            right.classList.remove('hover');
+            rightBlurb.classList.remove('hover');
         }
 
         const leftLeave = (event) => {
             left.addEventListener("transitionend", transitionOut, false);
-            left.classList.remove('active');
-            leftBlurb.classList.remove('active');
+            left.classList.remove('hover');
+            leftBlurb.classList.remove('hover');
         }
 
         left.addEventListener("mouseenter", leftEnter);
