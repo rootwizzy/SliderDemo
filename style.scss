@@ -37,11 +37,15 @@
 }
 
 .blurb {
-  position:   relative;
-  display:    inline;
+  position:    relative;
+  display:     inline;
+  font-size:   14px;
+  text-shadow: 1px 1px 2px black;
+  color:       white;
+  // visibility: hidden;
 
   .blurb-description {
-
+    font-size: 12px;
   }
 }
 

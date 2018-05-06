@@ -5,43 +5,70 @@
     <div id="wrapper">
         <img id="left" />
         <img id="right" />
-        <div id="blurb-left" class="blurb">THIS</div>
-        <div id="blurb-right" class="blurb">THAT</div>
+        <div id="blurb-left" class="blurb">
+            THIS
+            <div id="blurb-left-description" class="blurb-description">
+                Such Great Desk
+            </div>
+        </div>
+        <div id="blurb-right" class="blurb">
+            THAT
+            <div id="blurb-right-description" class="blurb-description">
+                Laptop Wow!
+            </div>
+        </div>
     </div>
 
     <script type="text/javascript">
 
-        var left  = document.getElementById("left"),
-            right = document.getElementById("right");
+        var left       = document.getElementById("left"),
+            leftBlurb  = document.getElementById("blurb-left"),
+            right      = document.getElementById("right"),
+            rightBlurb = document.getElementById("blurb-right");
 
-        var transitionOut = (event) => {
+        const transitionOut = (event) => {
             if (!event.target.classList.contains("active")) {
                 event.target.style.zIndex = null;
             }
         }
 
-        left.addEventListener("mouseenter", function (event) {
+        const leftEnter = (event) => {
             left.classList.add('active');
+            leftBlurb.classList.add('active');
+
             left.style.zIndex = "2";
             right.style.zIndex = null;
-        });
+        }
 
-        left.addEventListener("mouseleave", function (event) {
-            left.addEventListener("transitionend", transitionOut, false);
-            left.classList.remove('active');
-        });
-
-        right.addEventListener("mouseenter", function (event) {
+        const rightEnter = (event) => {
             right.classList.add('active');
+            rightBlurb.classList.add('active');
+
             right.style.zIndex = "2";
             left.style.zIndex = null;
-        });
+        }
 
-        right.addEventListener("mouseleave", function (event) {
+        const rightLeave = (event) => {
             right.addEventListener("transitionend", transitionOut, false);
             right.classList.remove('active');
-        });
+            leftBlurb.classList.remove('active');
+        }
 
+        const leftLeave = (event) => {
+            left.addEventListener("transitionend", transitionOut, false);
+            left.classList.remove('active');
+            leftBlurb.classList.remove('active');
+        }
+
+        left.addEventListener("mouseenter", leftEnter);
+        left.addEventListener("mouseleave", leftLeave);
+        leftBlurb.addEventListener("mouseenter", leftEnter);
+        leftBlurb.addEventListener("mouseleave", leftLeave);
+
+        right.addEventListener("mouseenter", rightEnter);
+        right.addEventListener("mouseleave", rightLeave);
+        rightBlurb.addEventListener("mouseenter", rightEnter);
+        rightBlurb.addEventListener("mouseleave", rightLeave);
 
     </script>
 </body>
