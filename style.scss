@@ -58,6 +58,10 @@
   &.hover {
     opacity: 1;
   }
+
+  &.active {
+    opacity: 1;
+  }
 }
 
 #blurb-left {
@@ -68,6 +72,10 @@
   transition:  margin-left .4s, opacity .4s;
 
   &.hover {
+    margin-left: 30px;
+  }
+
+  &.active {
     margin-left: 30px;
   }
 }
@@ -82,16 +90,32 @@
   &.hover {
     margin-right: 30px;
   }
+
+  &.active {
+    margin-right: 30px;
+  }
 }
 
-#left-close {
-
+#close-left {
+  right:  190px;
+  bottom: 65px;
 }
 
-#right-close {
-
+#close-right {
+  left:   30px;
+  bottom: 65px;
 }
 
 .close {
+  position:         absolute;
+  opacity:          0;
+  z-index:          4;
+  font-size:        12px;
+  color:            white;
+  text-shadow:      1px 1px 2px black;
+  transition:       opacity .4s .2s ease;
 
+  &.active {
+    opacity: 1;
+  }
 }

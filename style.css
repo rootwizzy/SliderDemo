@@ -50,6 +50,9 @@
 .blurb.hover {
   opacity: 1;
 }
+.blurb.active {
+  opacity: 1;
+}
 
 #blurb-left {
   z-index: 4;
@@ -59,6 +62,9 @@
   transition: margin-left 0.4s, opacity 0.4s;
 }
 #blurb-left.hover {
+  margin-left: 30px;
+}
+#blurb-left.active {
   margin-left: 30px;
 }
 
@@ -71,6 +77,32 @@
 }
 #blurb-right.hover {
   margin-right: 30px;
+}
+#blurb-right.active {
+  margin-right: 30px;
+}
+
+#close-left {
+  right: 190px;
+  bottom: 65px;
+}
+
+#close-right {
+  left: 30px;
+  bottom: 65px;
+}
+
+.close {
+  position: absolute;
+  opacity: 0;
+  z-index: 4;
+  font-size: 12px;
+  color: white;
+  text-shadow: 1px 1px 2px black;
+  transition: opacity 0.4s 0.2s ease;
+}
+.close.active {
+  opacity: 1;
 }
 
 /*# sourceMappingURL=style.css.map */

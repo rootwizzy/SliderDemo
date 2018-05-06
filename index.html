@@ -10,23 +10,25 @@
             <div id="blurb-left-description" class="blurb-description">
                 Such Great Desk
             </div>
-            <div id="left-close" class="close"></div>
         </div>
         <div id="blurb-right" class="blurb">
             THAT
             <div id="blurb-right-description" class="blurb-description">
                 Laptop Wow!
             </div>
-            <div id="right-close" class="close"></div>
         </div>
+        <div id="close-right" class="close">close</div>
+        <div id="close-left" class="close">close</div>
     </div>
 
     <script type="text/javascript">
 
         var left       = document.getElementById("left"),
             leftBlurb  = document.getElementById("blurb-left"),
+            leftClose  = document.getElementById("close-left"),
             right      = document.getElementById("right"),
-            rightBlurb = document.getElementById("blurb-right");
+            rightBlurb = document.getElementById("blurb-right"),
+            rightClose = document.getElementById("close-right");
 
         const transitionOut = (event) => {
             if (!event.target.classList.contains("hover")) {
@@ -63,13 +65,27 @@
         }
 
         const leftClick = (event) => {
-            console.log('leftClick');
             left.classList.add('active');
+            leftBlurb.classList.add('active');
+            leftClose.classList.add('active');
         }
 
         const rightClick = (event) => {
-            console.log('rightClick');
             right.classList.add('active');
+            rightBlurb.classList.add('active');
+            rightClose.classList.add('active');
+        }
+
+        const leftCloseClick = (event) => {
+            left.classList.remove('active');
+            leftBlurb.classList.remove('active');
+            leftClose.classList.remove('active');
+        }
+
+        const rightCloseClick = (event) => {
+            right.classList.remove('active');
+            rightBlurb.classList.remove('active');
+            rightClose.classList.remove('active');
         }
 
         left.addEventListener("click", leftClick);
@@ -77,12 +93,14 @@
         left.addEventListener("mouseleave", leftLeave);
         leftBlurb.addEventListener("mouseenter", leftEnter);
         leftBlurb.addEventListener("mouseleave", leftLeave);
+        leftClose.addEventListener("click", leftCloseClick);
 
         right.addEventListener("click", rightClick);
         right.addEventListener("mouseenter", rightEnter);
         right.addEventListener("mouseleave", rightLeave);
         rightBlurb.addEventListener("mouseenter", rightEnter);
         rightBlurb.addEventListener("mouseleave", rightLeave);
+        rightClose.addEventListener("click", rightCloseClick);
 
     </script>
 </body>
