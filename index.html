@@ -60,11 +60,23 @@
             leftBlurb.classList.remove('hover');
         }
 
+        const leftClick = (event) => {
+            console.log('leftClick');
+            left.classList.add('active');
+        }
+
+        const rightClick = (event) => {
+            console.log('rightClick');
+            right.classList.add('active');
+        }
+
+        left.addEventListener("click", leftClick);
         left.addEventListener("mouseenter", leftEnter);
         left.addEventListener("mouseleave", leftLeave);
         leftBlurb.addEventListener("mouseenter", leftEnter);
         leftBlurb.addEventListener("mouseleave", leftLeave);
 
+        right.addEventListener("click", rightClick);
         right.addEventListener("mouseenter", rightEnter);
         right.addEventListener("mouseleave", rightLeave);
         rightBlurb.addEventListener("mouseenter", rightEnter);
